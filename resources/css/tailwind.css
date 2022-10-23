@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cerve-input{
+    @apply mt-2 border h-10 rounded-md w-full shadow-sm focus:outline-sky-600 focus:outline focus:outline-1 px-1
+}
+
+.cerve-label{
+    @apply w-full text-sm text-sky-900
+}
