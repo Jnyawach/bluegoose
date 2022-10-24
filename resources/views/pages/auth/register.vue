@@ -3,17 +3,50 @@
     <title>Register</title>
 </Head>
     <div class="h-screen">
-        <div class="grid h-screen lg:grid-cols-5">
-            <div class="bg-sky-900 col-span-2 place-content-center">
-                <div class="self-center">
-                    <h1>Register here</h1>
+        <div class="grid h-screen lg:grid-cols-5 md:grid-cols-5">
+            <div class="bg-sky-900 col-span-2  hidden md:block ">
+                <div class="self-center w-full mt-16">
+                    <div class="flex justify-center mb-8">
+                        <img :src="'/images/bluegoose-white-logo.png'" alt="Bluegoose Logo" class="w-48">
+                    </div>
+                    <div class="text-white px-5 mt-5 flex justify-center">
+                       <div class="self-center px-5">
+                           <div class="flex gap-3">
+                               <div class=""><span class="text-xl text-sky-500"><i class="fa-solid fa-check"></i></span></div>
+                               <div>
+                                   <h6 class="font-semibold">Core Rental Management System</h6>
+                                   <p class="mt-3 text-sm">Create landlords, properties, units and tenants. Invoice for rent, service charge, utility bills and repairs.</p>
+                               </div>
+                           </div>
+
+                           <div class="flex gap-3 mt-8">
+                               <div class=""><span class="text-xl text-sky-500"><i class="fa-solid fa-check"></i></span></div>
+                               <div>
+                                   <h6 class="font-semibold">Accounting System</h6>
+                                   <p class="mt-3 text-sm">Your accounting transactions are recorded in real time as you transact. Manage company expenses, suppliers and other transactions.</p>
+                               </div>
+                           </div>
+
+                           <div class="flex gap-3 mt-8">
+                               <div class=""><span class="text-xl text-sky-500"><i class="fa-solid fa-check"></i></span></div>
+                               <div>
+                                   <h6 class="font-semibold">All in one portal</h6>
+                                   <p class="mt-3 text-sm">Landlords and tenants self service portal, Bulk payments for landlords and tenants through b2b and b2c disbursements,
+                                       schedule repetitive tasks, system logs and advanced security.</p>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
                 </div>
 
             </div>
-            <div class="flex  w-full col-span-3 bg-gray-50">
-                <div class="self-center px-14 py-5 w-full">
-                    <h1 class="text-sky-900 font-semibold text-lg">Register here</h1>
-                    <p class="mt-3">Manage all your rental unit in one place</p>
+            <div class="flex  w-full col-span-3 bg-sky-700  md:bg-gray-50">
+                <div class="self-center px-14 py-5 w-full border md:border-none m-5 bg-white md:bg-transparent rounded-xl shadow-md md:shadow-none">
+                    <div class="flex justify-center mb-8 md:hidden">
+                        <img :src="'/images/bluegoose-logo.png'" alt="Bluegoose Logo" class="w-48">
+                    </div>
+                    <h1 class="text-sky-900 font-semibold text-lg text-center md:text-left">Register here</h1>
+                    <p class="mt-3 text-center md:text-left">Manage all your rental units in one place</p>
                     <form>
                     <div class="grid lg:grid-cols-2 mt-8 gap-3">
                         <div class="col-span-1">
@@ -81,7 +114,7 @@
                             <Link href="#" class="hover:text-sky-600">Privacy policy</Link>
                         </div>
                         <div class="mt-8">
-                            <button type="submit" class="bg-sky-800 text-white py-2 px-8 rounded-md border
+                            <button type="submit" class="bg-sky-700 text-white py-2 px-8 rounded-md border
                             border-sky-900 hover:bg-sky-900">
                                 Register
                             </button>
