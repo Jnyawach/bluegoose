@@ -30,8 +30,8 @@ module.exports = {
             'white':'#ffffff'
         },*/
         fontFamily:{
-         'Poppins':[
-             'Poppins', 'sans-serif'
+         'spartan':[
+             '"League Spartan"', 'sans-serif'
          ]
         }
 	},
