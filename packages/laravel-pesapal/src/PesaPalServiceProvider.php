@@ -14,6 +14,12 @@ class PesaPalServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind('nyawach-pesapal', function () {
+            return new LaravelPesapal();
+        });
+        $this->mergeConfigFrom(
+            __DIR__.'/config/pesapal.php', 'pesapal'
+        );
     }
 
     /**
@@ -29,9 +35,7 @@ class PesaPalServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/pesapal.php' => config_path('pesapal.php'),
         ]);
-        $this->mergeConfigFrom(
-            __DIR__.'/config/pesapal.php', 'pesapal'
-        );
+
     }
 }
 

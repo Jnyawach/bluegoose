@@ -39,8 +39,8 @@ class LaravelPesapal
         * Get test keys from https://developer.pesapal.com/ and production
         * keys from pesapal business account
         */
-       $this->consumer_key=config('pesapal.pesapal_consumer_key');
-       $this->consumer_secret=config('pesapal.pesapal_consumer_secret');
+       $this->consumer_key=config('pesapal.consumer_key');
+       $this->consumer_secret=config('pesapal.consumer_secret');
        $this->pesapal_guard=config('pesapal.pesapal_guard');
        /*
         * You will get ipn_id after registering IPN urls
@@ -56,6 +56,7 @@ class LaravelPesapal
 
     //Get the pesapal acess token. The token is valid for 5minutes
     public function getAccessToken(){
+
         $headers = array();
         $headers['accept'] = 'text/plain';
         $headers['content-type'] = 'application/json';
