@@ -22,4 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group([],function (){
     Route::get('access/token', [PesapalController::class,'accessToken']);
+    Route::get('get/ipn', [PesapalController::class,'getRegisteredIpn']);
+    Route::get('register/ipn', [PesapalController::class,'registerIpn']);
+    Route::get('submit/order', [PesapalController::class,'submitOrderRequest']);
+    Route::get('order/status', [PesapalController::class,'orderStatus']);
 });

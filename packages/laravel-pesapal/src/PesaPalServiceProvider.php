@@ -31,7 +31,7 @@ class PesaPalServiceProvider extends ServiceProvider
     {
         //
 
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/2022_10_31_015126_create_pesapals_table');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->publishes([
             __DIR__.'/config/pesapal.php' => config_path('pesapal.php'),
         ]);

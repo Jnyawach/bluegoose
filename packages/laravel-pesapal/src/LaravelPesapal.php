@@ -70,6 +70,73 @@ class LaravelPesapal
         return $response->token;
     }
 
+    /**
+     * Function to check if the IPN url already exist, if it does, fetch the IPN id.
+     * $access_token  = Token you received from calling getAccessToken()
+     */
+    public function getRegisteredIpn(){
+        $headers = array();
+        $headers['accept'] = 'text/plain';
+        $headers['content-type'] = 'application/json';
+        $headers['authorization'] = 'Bearer '.$this->accessToken;
+
+        $endPoint = $this->base_url.'/api/URLSetup/GetIpnList';
+        $response = $this->curlRequest($endPoint, $headers);
+
+        return $response;
+    }
+
+    /**
+     * Function to check to register IPN, responds back with IPN Id.
+     * $accessToken  = Token you received from calling getAccessToken()
+     */
+
+    public function registerIpn($postData){
+        $headers = array();
+        $headers['accept'] = 'text/plain';
+        $headers['content-type'] = 'application/json';
+        $headers['authorization'] = 'Bearer '.$this->accessToken;
+        $endPoint = $this->base_url.'/api/URLSetup/RegisterIPN';
+        $response = $this->curlRequest($endPoint, $headers, $postData);
+        return $response;
+
+    }
+
+    /**
+     * $request = An object from your system
+     * $access_token  = Token you received from calling getAccessToken()
+     */
+    public function getMerchertOrderURL($postData){
+        $headers = array();
+        $headers['accept'] = 'text/plain';
+        $headers['content-type'] = 'application/json';
+        $headers['authorization'] = 'Bearer '.$this->accessToken;
+
+
+        $endPoint = $this->base_url.'/api/Transactions/SubmitOrderRequest';
+        $response = $this->curlRequest($endPoint, $headers, $postData);
+
+
+        return $response;
+    }
+
+    /**
+     * $orderTrackingId - Guid you received from calling getMerchertOrderURL()
+     * $access_token  = Token you received from calling getAccessToken()
+     */
+    public function getTransactionStatus($orderTrackingId){
+
+        $headers = array();
+        $headers['accept'] = 'text/plain';
+        $headers['content-type'] = 'application/json';
+        $headers['authorization'] = 'Bearer '.$this->accessToken;
+
+        $endPoint = $this->base_url.'/api/Transactions/GetTransactionStatus?orderTrackingId='.$orderTrackingId;
+        $response = $this->curlRequest($endPoint, $headers);
+
+        return $response;
+    }
+
     //curl request
     public function curlRequest($url, $headers = null, $postData=null){
 
@@ -110,4 +177,6 @@ class LaravelPesapal
 
         return $response;
     }
+
+
 }
